@@ -6,15 +6,18 @@
 </head>
 <body>
     <%- include('./partials/navbar')%>
-    <div class="container mt-3">
+    <div class="container mt-3 row row-cols-4">
 
         <% blogs.forEach(i => {%>
-            <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="<%= i.coverImageURL %>" alt="Card image cap">
-                <div class="card-body">  
-                    <h5 class="card-title"><%= i.title %></h5>
-                    <p class="card-text"><%= i.body %></p>
-                    <a href="<%= i._id %>" class="btn btn-primary">View</a>
+            <div class="col">
+
+                <div class="card col" style="width: 18rem;">
+                    <img class="card-img-top" src="<%= i.coverImageURL %>" alt="Card image cap">
+                    <div class="card-body">  
+                        <h5 class="card-title"><%= i.title %></h5>
+                        
+                        <a href="blog/<%= i._id %>" class="btn btn-primary">View</a>
+                    </div>
                 </div>
             </div>
         <% }) %>
